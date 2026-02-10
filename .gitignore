@@ -1,0 +1,13 @@
+# Node / env
+node_modules/
+.env
+
+# OS
+.DS_Store
+
+# HTTrack cache
+hts-cache/
+
+# IDE files
+.vscode/
+*.swp

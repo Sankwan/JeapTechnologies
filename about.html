@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Us - Jeap Technologies | Meet Our Team</title>
+  <meta name="description" content="Meet the talented team behind Jeap Technologies. Learn about our expertise in digital solutions, graphic design, web development, mobile apps, and more.">
+  <meta name="keywords" content="jeap technologies team, about us, digital solutions team, graphic designers, web developers, mobile app developers, python developers">
+
+  <!-- Favicons -->
+  <link href="assets/img/JTlogo2.png" rel="icon">
+  <link href="assets/img/JTlogo2.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/" rel="preconnect">
+  <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Team member cards styling */
+    .team-member {
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    }
+
+    .team-member-image {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .team-member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover .team-member-image img {
+      transform: scale(1.1);
+    }
+
+    .team-member-info {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .team-member h4 {
+      color: #348E38;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-member .position {
+      color: #6c757d;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .team-member p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a.linkedin {
+      background-color: #0077b5;
+    }
+
+    .social-links a.github {
+      background-color: #333;
+    }
+
+    .social-links a.twitter {
+      background-color: #1da1f2;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* About section styling */
+    .about-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 4rem 0;
+      margin: 3rem 0;
+      border-radius: 15px;
+    }
+
+    .about-section h2 {
+      color: #348E38;
+      margin-bottom: 2rem;
+    }
+
+    /* Pricing card styling similar to courses.html */
+    .pricing-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid #348E38;
+      transform: scale(1.05);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #348E38;
+      color: white;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .pricing-card h3 {
+      color: #348E38;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .price {
+      margin-bottom: 1.5rem;
+    }
+
+    .price .currency {
+      font-size: 1.2rem;
+      color: #6c757d;
+    }
+
+    .price .amount {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #348E38;
+    }
+
+    .price .period {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .features-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #6c757d;
+    }
+
+    .features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .features-list i {
+      color: #348E38;
+      margin-right: 0.5rem;
+    }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/JTlogo4.png" alt="Jeap Technologies">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="https://wa.me/233557889480">Contact Us on WhatsApp</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>About Us</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">About Us</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About Section -->
+    <section class="about section">
+      <div class="container">
+        <div class="about-section" data-aos="fade-up">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <h2>Welcome to Jeap Technologies</h2>
+              <p class="lead">
+                We are a passionate team of digital innovators, designers, and developers dedicated to transforming your ideas into powerful digital solutions. With expertise spanning graphic design, web development, mobile applications, and digital marketing, we're here to elevate your business to new heights.
+              </p>
+              <p>
+                At Jeap Technologies, we believe in the power of collaboration, creativity, and cutting-edge technology. Our mission is to deliver exceptional digital experiences that not only meet but exceed our clients' expectations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <!-- <section class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Meet Our Team</h2>
+        <p>The talented professionals behind Jeap Technologies</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          Team Member 1
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-1.jpg" alt="John Doe">
+              </div>
+              <div class="team-member-info">
+                <h4>John Doe</h4>
+                <p class="position">Lead Full-Stack Developer & Founder</p>
+                <p>Passionate full-stack developer with 5+ years of experience in web development, mobile apps, and Python automation. Leads the technical vision at Jeap Technologies.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/johndoe" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/johndoe" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/johndoe" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Team Member 2
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-2.jpg" alt="Jane Smith">
+              </div>
+              <div class="team-member-info">
+                <h4>Jane Smith</h4>
+                <p class="position">Creative Director & Graphic Designer</p>
+                <p>Award-winning graphic designer with expertise in brand identity, UI/UX design, and visual communication. Brings creative vision to every project.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/janesmith" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/janesmith" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/janesmith" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Team Member 3
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-3.jpg" alt="Michael Johnson">
+              </div>
+              <div class="team-member-info">
+                <h4>Michael Johnson</h4>
+                <p class="position">Mobile App Developer</p>
+                <p>Flutter specialist with expertise in cross-platform mobile development. Creates seamless mobile experiences for iOS and Android platforms.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/michaeljohnson" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/michaeljohnson" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/michaeljohnson" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Team Member 4
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-4.jpg" alt="Sarah Wilson">
+              </div>
+              <div class="team-member-info">
+                <h4>Sarah Wilson</h4>
+                <p class="position">Digital Marketing Specialist</p>
+                <p>LinkedIn growth strategist and social media expert. Helps clients build their digital presence and expand their professional networks.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/sarahwilson" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/sarahwilson" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/sarahwilson" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Team Member 5
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-5.jpg" alt="David Brown">
+              </div>
+              <div class="team-member-info">
+                <h4>David Brown</h4>
+                <p class="position">Python Developer & Data Analyst</p>
+                <p>Expert in Python development, automation, and data analysis. Specializes in backend systems and machine learning integration.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/davidbrown" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/davidbrown" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/davidbrown" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          Team Member 6
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="team-member">
+              <div class="team-member-image">
+                <img src="assets/img/team/team-6.jpg" alt="Emily Davis">
+              </div>
+              <div class="team-member-info">
+                <h4>Emily Davis</h4>
+                <p class="position">Content Creator & CV Specialist</p>
+                <p>Professional CV designer and content strategist. Helps clients create compelling resumes and presentations that stand out from the crowd.</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/emilydavis" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+                  <a href="https://github.com/emilydavis" class="github" target="_blank"><i class="bi bi-github"></i></a>
+                  <a href="https://twitter.com/emilydavis" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>End Team Section -->
+
+    <!-- Pricing Section -->
+    <!-- <section id="pricing" class="pricing section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Service Packages</h2>
+        <p>Flexible pricing plans tailored to your needs</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          Premium Starter Pack
+          <!-- <div class="col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-card">
+              <div class="popular-badge">Enroll</div>
+              <h3 class="btn btn-primary">Premium Starter Pack</h3>
+              <div class="price">
+                <span class="currency">GH₵</span>
+                <span class="amount">950</span>
+                <span class="period">/ 8 weeks</span>
+              </div>
+              <p class="description">Learn the essentials of cybersecurity with modules including mobile security, cloud security, and IoT.</p>
+
+              <h4>Featured Modules:</h4>
+              <ul class="features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Introduction to Cybersecurity</li>
+                <li><i class="bi bi-check-circle-fill"></i> Mobile Security</li>
+                <li><i class="bi bi-check-circle-fill"></i> Internet of Things (IoT)</li>
+                <li><i class="bi bi-check-circle-fill"></i> Security in Cloud</li>
+                <li><i class="bi bi-check-circle-fill"></i> Dark Web Basics</li>
+              </ul>
+              <a href="checkout/1.html" class="btn btn-primary">Enroll Now <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div> -->
+
+          <!-- Starter Package -->
+          <!-- <div class="col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-card">
+              <div class="popular-badge">Starter</div>
+              <h3>Basic Design Package</h3>
+              <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">299</span>
+                <span class="period">/ project</span>
+              </div>
+              <p class="description">Perfect for small businesses getting started with their brand identity</p>
+
+              <h4>Package Includes:</h4>
+              <ul class="features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Logo Design (3 concepts)</li>
+                <li><i class="bi bi-check-circle-fill"></i> Business Card Design</li>
+                <li><i class="bi bi-check-circle-fill"></i> Basic Brand Guidelines</li>
+                <li><i class="bi bi-check-circle-fill"></i> 2 Revisions Included</li>
+                <li><i class="bi bi-check-circle-fill"></i> High-Resolution Files</li>
+              </ul>
+              <a href="https://wa.me/233557889480?text=I'm interested in the Basic Design Package" class="btn btn-primary btn-pricing">Get Started</a>
+            </div>
+          </div> -->
+
+          <!-- Professional Package -->
+          <!-- <div class="col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-card popular">
+              <div class="popular-badge">Most Popular</div>
+              <h3>Professional Web Solution</h3>
+              <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">899</span>
+                <span class="period">/ project</span>
+              </div>
+              <p class="description">Complete web solution for businesses ready to establish their online presence</p>
+
+              <h4>Package Includes:</h4>
+              <ul class="features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Custom Website Design</li>
+                <li><i class="bi bi-check-circle-fill"></i> Responsive Development</li>
+                <li><i class="bi bi-check-circle-fill"></i> Content Management System</li>
+                <li><i class="bi bi-check-circle-fill"></i> SEO Optimization</li>
+                <li><i class="bi bi-check-circle-fill"></i> 3 Months Support</li>
+                <li><i class="bi bi-check-circle-fill"></i> Training & Documentation</li>
+              </ul>
+              <a href="https://wa.me/233557889480?text=I'm interested in the Professional Web Solution" class="btn btn-light btn-pricing">Get Started</a>
+            </div>
+          </div> -->
+
+          <!-- Premium Package -->
+          <!-- <div class="col-lg-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-card">
+              <div class="popular-badge">Premium</div>
+              <h3>Complete Digital Solution</h3>
+              <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">1,999</span>
+                <span class="period">/ project</span>
+              </div>
+              <p class="description">Comprehensive digital transformation package for growing businesses</p>
+
+              <h4>Package Includes:</h4>
+              <ul class="features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Complete Brand Identity</li>
+                <li><i class="bi bi-check-circle-fill"></i> Professional Website</li>
+                <li><i class="bi bi-check-circle-fill"></i> Mobile App Development</li>
+                <li><i class="bi bi-check-circle-fill"></i> Social Media Graphics</li>
+                <li><i class="bi bi-check-circle-fill"></i> LinkedIn Optimization</li>
+                <li><i class="bi bi-check-circle-fill"></i> 6 Months Support</li>
+                <li><i class="bi bi-check-circle-fill"></i> Marketing Materials</li>
+              </ul>
+              <a href="https://wa.me/233557889480?text=I'm interested in the Complete Digital Solution" class="btn btn-primary btn-pricing">Get Started</a>
+            </div>
+          </div> -->
+
+        <!-- </div> -->
+
+        <!-- Custom Quote Section -->
+        <!-- <div class="row mt-5">
+          <div class="col-12 text-center" data-aos="fade-up">
+            <div class="alert alert-info">
+              <h5><i class="bi bi-info-circle"></i> Need Something Custom?</h5>
+              <p class="mb-3">Every project is unique! Contact us for a personalized quote tailored to your specific requirements.</p>
+              <a href="https://wa.me/233557889480?text=I'd like to discuss a custom project" class="btn btn-outline-primary">Request Custom Quote</a>
+            </div>
+          </div>
+        </div> -->
+      <!-- </div> -->
+    <!-- </section>End Pricing Section --> -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/JTlogo4.png" alt="Jeap Technologies logo">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Accra, Ghana</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+233557889480</span></p>
+            <p><strong>Email:</strong> <span>jeaptechnologies@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html#services-tab-1">Graphic Design</a></li>
+            <li><a href="services.html#services-tab-3">Web Development</a></li>
+            <li><a href="services.html#services-tab-4">Mobile App Development</a></li>
+            <li><a href="services.html#services-tab-5">Python Development</a></li>
+            <li><a href="services.html#services-tab-6">CV Generation</a></li>
+          </ul>
+        </div> -->
+
+        <div class="col-lg-4 col-md-6 footer-about">
+          <h4>About Jeap Technologies</h4>
+          <p>Jeap Technologies specializes in innovative digital solutions including graphic design, web development, mobile apps, and professional services to help businesses and individuals achieve their digital goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <!-- <div class="credits mt-3">
+        <p>Powered by <a href="https://nhyirasolutions.com/" target="_blank">Nhyira Solutions</a></p>
+      </div> -->
+      <p>© <span>Copyright</span> 2025. <strong class="px-1 sitename">Jeap Technologies</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.html"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

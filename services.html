@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jeap Technologies - Our Services | Digital Solutions</title>
+  <meta name="description" content="Comprehensive digital services including Graphic Design, Web Development, Mobile App Development, Python Development, CV Generation, PowerPoint Design, and LinkedIn Growth.">
+  <meta name="keywords" content="graphic design, web development, mobile app development, flutter, python development, CV generation, PowerPoint design, LinkedIn growth, digital services">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/" rel="preconnect">
+  <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    /* Service illustration images */
+    .service-illustration {
+      transition: transform 0.3s ease;
+    }
+
+    .service-illustration:hover {
+      transform: scale(1.02);
+    }
+
+    /* Tab navigation enhancement */
+    .nav-tabs .nav-link {
+      border-radius: 10px 10px 0 0;
+      margin-right: 5px;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #348E38;
+      border-color: #348E38;
+      color: white;
+    }
+
+    /* Service features styling */
+    .service-features {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 1rem 0;
+    }
+
+    .service-features h3 {
+      color: #348E38;
+      margin-bottom: 1rem;
+    }
+
+    .service-features ul li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Animation enhancements */
+    .tab-content {
+      min-height: 300px;
+    }
+
+    .tab-pane {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Portfolio section styling */
+    .portfolio-section {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .portfolio-item {
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .portfolio-item img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .portfolio-item .card-body {
+      padding: 1.5rem;
+    }
+
+    .portfolio-item h6 {
+      color: #348E38;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-item p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-item .btn {
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border-color: #348E38;
+      color: #348E38;
+      transition: all 0.2s ease;
+    }
+    .portfolio-item .btn:hover,
+    .portfolio-item .btn:focus {
+      background-color: #348E38;
+      color: #fff;
+      border-color: #348E38;
+    }
+    /* Social media screenshot view */
+    .portfolio-item .card-body.bg-transparent {
+      background: transparent;
+      border-top: none;
+      padding-top: .75rem;
+    }
+    .social-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 640px;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.09);
+      display: block;
+      margin: 0 auto;
+      cursor: zoom-in;
+    }
+    @media (max-width: 767px) {
+      .social-img { max-height: 420px; }
+    }
+    /* PowerPoint carousel styles */
+    .portfolio-section .project-title {
+      margin-bottom: 1rem;
+      color: #2b6f2b;
+      font-weight: 600;
+    }
+    .ppt-swiper .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .ppt-slide-img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .ppt-slide-img:hover {
+      transform: translateY(-4px);
+    }
+    .ppt-swiper .swiper-button-next,
+    .ppt-swiper .swiper-button-prev {
+      color: #348E38;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="assets/img/JTlogo4.png" alt="Jeap Technologies">
+        <!-- <h1 class="sitename">Jeap Technologies</h1> -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="https://wa.me/233557889480">Contact Us on WhatsApp</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1></h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html"></a></li>
+            <li class="current"></li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+
+    <!-- Services Section -->
+    <section id="services" class="features section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Digital Services</h2>
+        <p>Innovative digital solutions to elevate your business and drive growth</p>
+         <p>Make a quick scan through our various services</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="d-flex justify-content-center">
+          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#services-tab-1">
+                <h4>Graphic Design</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-2">
+                <h4>UI/UX</h4>
+              </a>End tab nav item
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-2">
+                <h4>Web Development</h4>
+              </a><!-- End tab nav item -->
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-3">
+                <h4>Mobile App Development</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-4">
+                <h4>Python Development</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-5">
+                <h4>CV Generation</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-6">
+                <h4>PowerPoint Design</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-7">
+                <h4>LinkedIn Growth</h4>
+              </a>
+            </li><!-- End tab nav item -->
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-8">
+                <h4>Social Media Management</h4>
+              </a><!-- End tab nav item -->
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" data-bs-target="#services-tab-9">
+                <h4>Photography & Videography</h4>
+              </a><!-- End tab nav item -->
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Graphic Design Tab -->
+          <div class="tab-pane fade active show" id="services-tab-1">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Creative Visual Identity</h3>
+                <p class="fst-italic">
+                  Create stunning visual designs that capture your brand essence and communicate your message effectively.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Logo design and brand identity</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Marketing materials and brochures</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Social media graphics and banners</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Business cards and stationery</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/graphicdesign.png" alt="Graphic Design Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- 1 Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Our Graphic Design Portfolio</h4>
+                  <p class="text-center text-muted">Explore some of our recent graphic design projects</p>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/gd portfolio.png" class="card-img-top" alt="Brand Identity Project">
+                    <div class="card-body">
+                      <h6>Creative Flyer Designs and More</h6>
+                      <p>Click link to view  some amazing design works</p>
+                      <a href="https://jeaptechnologies.pixieset.com/designtree/" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Portfolio</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/risk.jpg" class="card-img-top" alt="Marketing Materials">
+                    <div class="card-body">
+                      <h6>Restaurant Marketing Package</h6>
+                      <p>Social media graphics, menu design, and promotional materials for a local restaurant chain.</p>
+                      <a href="portfolio/restaurant-marketing.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/team.jpg" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Corporate Annual Report</h6>
+                      <p>Professional annual report design with infographics and data visualization elements.</p>
+                      <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- Web Development Tab-->
+          <div class="tab-pane fade" id="services-tab-2">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Modern Web Solutions</h3>
+                <p class="fst-italic">
+                  Build responsive, modern websites and web applications that provide exceptional user experiences.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Responsive website design</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Visual design and branding</span></li>
+                  <!-- <li><i class="bi bi-check2-all"></i> <span>Content management systems</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Custom web applications</span></li> -->
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/webdev1.png" alt="Web Development Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            
+            <!-- Webdev Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Some of Our Projects</h4>
+                  <p class="text-center text-muted">Explore some of our recent project websites created</p>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Petshop.png" class="card-img-top" alt="Brand Identity Project">
+                    <div class="card-body">
+                      <h6>PawPet Shop</h6>
+                      <p>Site to purchase a Puppy</p>
+                      <a href="https://pawpetshop.free.nf" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/ImportifySite.jpg" class="card-img-top" alt="Marketing Materials">
+                    <div class="card-body">
+                      <h6>Importify: Shipping and logistics Site</h6>
+                      <p>Site for managing import and export operations.</p>
+                      <a href="https://importify.infinityfree.me" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/lynstrades.jpg" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Forex Trading Landing Page</h6>
+                      <p>Professional landing page for a forex trading platform with modern design and responsive layout.</p>
+                      <a href="https://lynstrades.netlify.app" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/ksblack.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Kels Collection</h6>
+                      <p>Online fashion store with modern design and responsive layout.</p>
+                      <a href="https://kelscollection.kesug.com" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/a8.jpeg" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Adonis Media</h6>
+                      <p>Photography, Videography and Marketing platform</p>
+                      <a href="https://adonismedia.page.gd" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/BigCAutos.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>BigC Autos</h6>
+                      <p>Automotive website for car rentals</p>
+                      <a href="https://bigcautos.page.gd" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- Mobile App Development -->
+          <div class="tab-pane fade" id="services-tab-3">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Cross-Platform Mobile Apps</h3>
+                <p class="fst-italic">
+                  Develop high-performance mobile applications using Flutter for seamless iOS and Android experiences.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Flutter cross-platform development</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Native iOS and Android apps</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>App store optimization</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>App maintenance and updates</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/flutterImg.png" alt="Mobile App Development Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            
+            <!-- MobileApp Portfolio Section -->
+            <!-- <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Our Graphic Design Portfolio</h4>
+                  <p class="text-center text-muted">Explore some of our recent graphic design projects</p>
+                </div>
+              </div> -->
+              
+              <!-- <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/gd portfolio.png" class="card-img-top" alt="Brand Identity Project">
+                    <div class="card-body">
+                      <h6>Our Most Recent Designs</h6>
+                      <p>What we have done for some clients</p>
+                      <a href="https://jeaptechnologies.pixieset.com/designtree/" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Portfolio</a>
+                    </div>
+                  </div>
+                </div> -->
+                
+                <!-- <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/risk.jpg" class="card-img-top" alt="Marketing Materials">
+                    <div class="card-body">
+                      <h6>Restaurant Marketing Package</h6>
+                      <p>Social media graphics, menu design, and promotional materials for a local restaurant chain.</p>
+                      <a href="portfolio/restaurant-marketing.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/team.jpg" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Corporate Annual Report</h6>
+                      <p>Professional annual report design with infographics and data visualization elements.</p>
+                      <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a>
+                    </div>
+                  </div>
+                </div> -->
+              <!-- </div>
+            </div> -->
+          </div><!-- End tab content item -->
+
+          <!-- Python Development -->
+          <div class="tab-pane fade" id="services-tab-4">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Powerful Python Solutions</h3>
+                <p class="fst-italic">
+                  Create robust backend systems, automation scripts, and data analysis tools using Python's versatile capabilities.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Backend API development</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Machine Learning & AI</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>IOTs & Hardware Integration</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Database Integration</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/PyHomee.png" alt="Python Development Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            
+            <!-- Py Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Some Projects we've Completed</h4>
+                  <p class="text-center text-muted">Explore some of our recent Python development projects</p>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py1.png" class="card-img-top" alt="Brand Identity Project">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Built an environmental sound detection system using Raspberry Pi to monitor and analyse forest sounds for illegal activities </p>
+                      <!-- <a href="https://hunterperry.lovable.app" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Portfolio</a> -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py2.png" class="card-img-top" alt="Marketing Materials">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Built an IoT system using ESP32, DHT22, and soil moisture sensors to capture real-time agricultural data including temperature, humidity, and soil moisture.</p>
+                      <!-- <a href="portfolio/restaurant-marketing.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a> -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py3.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Developed an IoT-based system for real-time monitoring of water levels in storage tanks using ultrasonic sensors and ESP32. </p>
+                      <!-- <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a> -->
+                    </div>
+                  </div>
+                </div> 
+
+                 <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py4.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Developed a predictive model using scikit-learn to estimate house prices from scraped property data from ghanapropertycentre.com. Performed extensive feature engineering on location, size, and amenities to improve model accuracy.</p>
+                      <!-- <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a> -->
+                    </div>
+                  </div>
+                </div> 
+
+                 <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py5.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Developed ESP32-based software for monitoring beehive temperature, humidity, and sound at HyfeBee. Implemented remote control systems for hive ventilation and heating to optimize colony health.</p>
+                      <!-- <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a> -->
+                    </div>
+                  </div>
+                </div> 
+
+                 <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100">
+                    <img src="assets/img/Py6.png" class="card-img-top" alt="Corporate Design">
+                    <div class="card-body">
+                      <h6>Overview</h6>
+                      <p>Designed and implemented a machine learning system to detect fake news articles using a One-Class Support Vector Machine (OC-SVM). The system was trained on datasets collected and cleaned from citinewsroom.com and other Ghanaian news outlets.</p>
+                      <!-- <a href="portfolio/annual-report.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Project</a> -->
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- CV Generation -->
+          <div class="tab-pane fade" id="services-tab-5">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Professional CV Creation</h3>
+                <p class="fst-italic">
+                  Design professional CVs and resumes that highlight your skills and help you land your dream job.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Professional CV design</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Industry-specific standards</span></li>
+                  <!-- <li><i class="bi bi-check2-all"></i> <span>ATS-optimized formatting</span></li> -->
+                  <li><i class="bi bi-check2-all"></i> <span>Cover letter creation</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/CVCreation.png" alt="CV Generation Illustration" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- PowerPoint Design -->
+          <div class="tab-pane fade" id="services-tab-6">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Compelling Presentations</h3>
+                <p class="fst-italic">
+                  Design professional and engaging PowerPoint presentations that communicate your ideas effectively.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Custom slide design</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Interactive presentations</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Business pitch decks</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Template creation</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/pptlogo.webp" alt="PowerPoint Design Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            
+            <!-- Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">PowerPoint Samples</h4>
+                  <p class="text-center text-muted">Preview selected slides. Click on any of them to enlarge.</p>
+                </div>
+              </div>
+
+              <!-- Project: ImpactHive Company -->
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="project-title">PowerPoint for ImpactHive Company</div>
+                  <div class="ppt-swiper swiper kkjswiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P1S1.png" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Powerpoint Images/P1S1.png" alt="ImpactHive slide 1" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P1S2.png" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Powerpoint Images/P1S2.png" alt="ImpactHive slide 2" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P1S3.png" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Powerpoint Images/P1S3.png" alt="ImpactHive slide 3" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P1S4.png" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Powerpoint Images/P1S4.png" alt="ImpactHive slide 4" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev kkj-prev"></div>
+                    <div class="swiper-button-next kkj-next"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project: HyfeBee Company -->
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="project-title">PowerPoint for HyfeBee</div>
+                  <div class="ppt-swiper swiper mmswiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P2S1.png" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Powerpoint Images/P2S1.png" alt="MM slide 1" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P2S2.png" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Powerpoint Images/P2S2.png" alt="HyfeBee slide 2" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P2S3.png" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Powerpoint Images/P2S3.png" alt="HyfeBee slide 3" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Powerpoint Images/P2S4.png" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Powerpoint Images/P2S4.png" alt="HyfeBee slide 4" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev mm-prev"></div>
+                    <div class="swiper-button-next mm-next"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- More projects can be added following the same pattern -->
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- LinkedIn Growth -->
+          <div class="tab-pane fade" id="services-tab-7">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>LinkedIn Profile Optimization</h3>
+                <p class="fst-italic">
+                  Optimize your LinkedIn profile and develop growth strategies to expand your professional network and opportunities.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Profile optimization</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Content strategy development</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Network growth strategies</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Personal branding</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/linkedinlogo.png" alt="LinkedIn Growth Illustration" class="img-fluid">
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- Social Media Management -->
+          <div class="tab-pane fade" id="services-tab-8">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Social Media Influencing and Growth</h3>
+                <p class="fst-italic">
+                  Optimize your social media profiles and develop growth strategies to expand your professional network and opportunities.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Instagram, TikTok, LinkedIn</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Organic Networking and Growth of followers</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span> Content strategy development</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Personal branding</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/social media.png" alt="Social Media Influencing and Growth Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- Social Media Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Some Social Media Pages we've handled</h4>
+                  <p class="text-center text-muted">Explore some of our recent projects</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100 text-center">
+                    <a href="assets/img/Portfolio Images/SM1.jpeg" class="glightbox" data-gallery="social" data-type="image">
+                      <img src="assets/img/Portfolio Images/SM1.jpeg" class="social-img img-fluid" alt="Social Media screenshot 1">
+                    </a>
+                    <div class="card-body bg-transparent">
+                      <h6>Bishop Herman College</h6>
+                      <p class="text-muted">Managed the Instagram account for the college and ensured consistent engagement and content to boost the PR of the college.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100 text-center">
+                    <a href="assets/img/Portfolio Images/SM2.jpeg" class="glightbox" data-gallery="social" data-type="image">
+                      <img src="assets/img/Portfolio Images/SM2.jpeg" class="social-img img-fluid" alt="Social Media screenshot 2">
+                    </a>
+                    <div class="card-body bg-transparent">
+                      <h6>Reusable Bags Gh</h6>
+                      <p class="text-muted">We managed the social media presence - Instagram, Tiktok and Snapchat for this company which is into sustainable packaging in place of plastics</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100 text-center">
+                    <a href="assets/img/Portfolio Images/SM3.jpeg" class="glightbox" data-gallery="social" data-type="image">
+                      <img src="assets/img/Portfolio Images/SM3.jpeg" class="social-img img-fluid" alt="Social Media screenshot 3">
+                    </a>
+                    <div class="card-body bg-transparent">
+                      <h6>London Boat</h6>
+                      <p class="text-muted">Worked with a client in the UK by managing the editing and content creation of their boat cruise service rendered on the Thames River in London.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100 text-center">
+                    <a href="assets/img/Portfolio Images/SM4.jpeg" class="glightbox" data-gallery="social" data-type="image">
+                      <img src="assets/img/Portfolio Images/SM4.jpeg" class="social-img img-fluid" alt="Social Media screenshot 4">
+                    </a>
+                    <div class="card-body bg-transparent">
+                      <h6>Cinnic Excel Enterprise</h6>
+                      <p class="text-muted">Worked hand-in-hand with a cosmetics shop in Accra to manage their social media presence and content creation.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <div class="portfolio-item card h-100 text-center">
+                    <a href="assets/img/Portfolio Images/SM5.jpeg" class="glightbox" data-gallery="social" data-type="image">
+                      <img src="assets/img/Portfolio Images/SM5.jpeg" class="social-img img-fluid" alt="Social Media screenshot 5">
+                    </a>
+                    <div class="card-body bg-transparent">
+                      <h6>Biheco Live</h6>
+                      <p class="text-muted">Managed the Youtube channel of Bishsop Herman College showcasing the beauty and variety of their talents,events and activities.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End tab content item -->
+
+          <!-- Photography and Videogrphy -->
+          <div class="tab-pane fade" id="services-tab-9">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+                <h3>Photography and Videography</h3>
+                <p class="fst-italic">
+                  Professional photography and videography services for businesses and individuals.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> <span>Event photography</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Personal Hire</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Studio Photoshoot</span></li>
+                  <li><i class="bi bi-check2-all"></i> <span>Personal branding</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/adonis.JPG" alt="Photography and Videography Illustration" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- Portfolio Section -->
+            <div class="portfolio-section">
+              <div class="row">
+                <div class="col-12 mb-4">
+                  <h4 class="text-center">Few Pictures from our Catalogue</h4>
+                  <p class="text-center text-muted">Preview selected images. Click on any of them to enlarge.</p>
+                </div>
+              </div>
+
+              <!-- Project: Graduation Ceremony Pictures -->
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="project-title">Graduation - International Community School</div>
+                  <div class="ppt-swiper swiper kkjswiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="assets/img/Graduation Images/a8.jpeg" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Graduation Images/a8.jpeg" alt="ImpactHive slide 1" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Graduation Images/a9.jpeg" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Graduation Images/a9.jpeg" alt="ImpactHive slide 2" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Graduation Images/Grad.jpeg" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Graduation Images/Grad.jpeg" alt="ImpactHive slide 3" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Graduation Images/a3.PNG" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Graduation Images/a3.PNG" alt="ImpactHive slide 4" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Graduation Images/a10.jpeg" class="glightbox" data-gallery="kkj">
+                          <img src="assets/img/Graduation Images/a10.jpeg" alt="ImpactHive slide 5" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev kkj-prev"></div>
+                    <div class="swiper-button-next kkj-next"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project: Prom Pictures -->
+              <div class="row mb-5">
+                <div class="col-12">
+                  <div class="project-title">Prom Night - International Community School </div>
+                  <div class="ppt-swiper swiper mmswiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="assets/img/Prom Images/a6.jpeg" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Prom Images/a6.jpeg" alt="MM slide 1" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Prom Images/a7.jpeg" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Prom Images/a7.jpeg" alt="HyfeBee slide 2" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Prom Images/Prom1.jpeg" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Prom Images/Prom1.jpeg" alt="HyfeBee slide 3" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="assets/img/Prom Images/Prom2.jpeg" class="glightbox" data-gallery="mm">
+                          <img src="assets/img/Prom Images/Prom2.jpeg" alt="HyfeBee slide 4" class="ppt-slide-img img-fluid">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev mm-prev"></div>
+                    <div class="swiper-button-next mm-next"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- More pictures can be added following the same pattern -->
+            </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+
+  </main>
+
+
+
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/JTlogo4.png" alt="Jeap Technologies logo">
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Accra, Ghana</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+233557889480</span></p>
+            <p><strong>Email:</strong> <span>jeaptechnologies@gmail.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html#services-tab-1">Graphic Design</a></li>
+            <li><a href="services.html#services-tab-3">Web Development</a></li>
+            <li><a href="services.html#services-tab-4">Mobile App Development</a></li>
+            <li><a href="services.html#services-tab-5">Python Development</a></li>
+            <li><a href="services.html#services-tab-6">CV Generation</a></li>
+          </ul>
+        </div> -->
+
+        <div class="col-lg-4 col-md-6 footer-about">
+          <h4>About Jeap Technologies</h4>
+          <p>Jeap Technologies specializes in innovative digital solutions including graphic design, web development, mobile apps, and professional services to help businesses and individuals achieve their digital goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <!-- <div class="credits mt-3">
+        <p>Powered by <a href="https://nhyirasolutions.com/" target="_blank">Nhyira Solutions</a></p>
+      </div> -->
+      <p>© <span>Copyright</span> 2025. <strong class="px-1 sitename">Jeap Technologies</strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.html"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof GLightbox !== 'undefined') {
+        GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+      }
+
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('.kkjswiper', {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          navigation: { nextEl: '.kkj-next', prevEl: '.kkj-prev' },
+          breakpoints: { 0: { slidesPerView: 1 }, 576: { slidesPerView: 2 }, 992: { slidesPerView: 3 } }
+        });
+
+        new Swiper('.mmswiper', {
+          slidesPerView: 3,
+          spaceBetween: 16,
+          navigation: { nextEl: '.mm-next', prevEl: '.mm-prev' },
+          breakpoints: { 0: { slidesPerView: 1 }, 576: { slidesPerView: 2 }, 992: { slidesPerView: 3 } }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

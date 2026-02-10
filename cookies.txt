@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+hivesecurityconsult.com	TRUE	/	FALSE	1999999999	PHPSESSID	l08c7nbj149v06tlsq2cap05pt
+
