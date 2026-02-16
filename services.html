@@ -250,6 +250,103 @@
     .ppt-swiper .swiper-button-prev {
       color: #348E38;
     }
+
+    /* Mobile-optimized scrollable tabs (YouTube-style) */
+    .services-tabs-wrapper {
+      overflow: hidden;
+    }
+
+    .nav-tabs {
+      border: none;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+      scroll-behavior: smooth;
+    }
+
+    /* Hide scrollbar but keep scrolling functional */
+    .nav-tabs::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-tabs {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .nav-tabs .nav-item {
+      flex-shrink: 0; /* prevent tab compression */
+      min-width: max-content;
+    }
+
+    .nav-tabs .nav-link {
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: #666;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .nav-tabs .nav-link:hover {
+      color: #348E38;
+      border-bottom-color: #e0e0e0;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: transparent;
+      color: #348E38;
+      border-bottom-color: #348E38;
+      border-radius: 0;
+    }
+
+    .nav-tabs .nav-link h4 {
+      margin: 0;
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    /* Desktop: centered layout */
+    @media (min-width: 992px) {
+      .services-tabs-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav-tabs {
+        overflow: visible;
+        flex-wrap: wrap;
+        border-bottom: 2px solid #e9ecef;
+      }
+
+      .nav-tabs .nav-item {
+        min-width: auto;
+        flex-shrink: 1;
+      }
+
+      .nav-tabs .nav-link {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Tablet: medium breakpoint */
+    @media (max-width: 991.98px) {
+      .nav-tabs .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Small mobile optimization */
+    @media (max-width: 576px) {
+      .nav-tabs .nav-link {
+        padding: 0.65rem 0.85rem;
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 
@@ -306,8 +403,8 @@
 
       <div class="container">
 
-        <div class="d-flex justify-content-center">
-          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
+        <div class="services-tabs-wrapper">
+          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100" role="tablist">
             <li class="nav-item">
               <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#services-tab-1">
                 <h4>Graphic Design</h4>
@@ -369,7 +466,7 @@
             </li>
 
           </ul>
-        </div>
+        </div><!-- End services tabs -->
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
 
@@ -1144,6 +1241,32 @@
           breakpoints: { 0: { slidesPerView: 1 }, 576: { slidesPerView: 2 }, 992: { slidesPerView: 3 } }
         });
       }
+
+      // Mobile-optimized scrollable tabs: auto-scroll active tab into view
+      const navTabs = document.querySelector('.nav-tabs');
+      const activeTab = document.querySelector('.nav-tabs .nav-link.active');
+      
+      if (navTabs && activeTab && window.innerWidth < 992) {
+        // Scroll active tab into center view on mobile
+        const tabOffsetLeft = activeTab.offsetLeft;
+        const tabWidth = activeTab.offsetWidth;
+        const containerWidth = navTabs.offsetWidth;
+        navTabs.scrollLeft = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+      }
+
+      // Re-center active tab when clicking on new tab (mobile)
+      document.querySelectorAll('.nav-tabs .nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992) {
+            setTimeout(() => {
+              const tabOffsetLeft = this.offsetLeft;
+              const tabWidth = this.offsetWidth;
+              const containerWidth = navTabs.offsetWidth;
+              navTabs.scrollLeft = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+            }, 100);
+          }
+        });
+      });
     });
   </script>
 
