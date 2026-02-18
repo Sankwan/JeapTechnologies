@@ -252,8 +252,10 @@
     /* Mobile-optimized scrollable tabs (YouTube-style) */
     .services-tabs-wrapper {
       position: relative;
-      overflow: visible;
+      overflow: hidden;
       width: 100%;
+      display: flex;
+      align-items: center;
     }
 
     .nav-tabs {
@@ -264,8 +266,9 @@
       -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
       scroll-behavior: smooth;
       display: flex;
-      width: 100%;
+      flex: 1;
       padding: 0.5rem 0;
+      min-width: 0;
     }
 
     /* Hide scrollbar but keep scrolling functional */
@@ -383,10 +386,6 @@
 
     /* Tablet: medium breakpoint */
     @media (max-width: 991.98px) {
-      .services-tabs-wrapper {
-        padding: 0 2.5rem;
-      }
-
       .nav-tabs .nav-link {
         padding: 0.75rem 1rem;
         font-size: 0.85rem;
@@ -395,10 +394,6 @@
 
     /* Small mobile optimization */
     @media (max-width: 576px) {
-      .services-tabs-wrapper {
-        padding: 0 2.5rem;
-      }
-
       .nav-tabs .nav-link {
         padding: 0.65rem 0.85rem;
         font-size: 0.75rem;
