@@ -111,12 +111,6 @@
       margin-right: 5px;
     }
 
-    .nav-tabs .nav-link.active {
-      background-color: #348E38;
-      border-color: #348E38;
-      color: white;
-    }
-
     /* Service features styling */
     .service-features {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -142,6 +136,10 @@
 
     .tab-pane {
       animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-pane:not(.active) {
+      display: none;
     }
 
     @keyframes fadeIn {
@@ -253,7 +251,9 @@
 
     /* Mobile-optimized scrollable tabs (YouTube-style) */
     .services-tabs-wrapper {
-      overflow: hidden;
+      position: relative;
+      overflow: visible;
+      width: 100%;
     }
 
     .nav-tabs {
@@ -263,11 +263,15 @@
       overflow-y: hidden;
       -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
       scroll-behavior: smooth;
+      display: flex;
+      width: 100%;
+      padding: 0.5rem 0;
     }
 
     /* Hide scrollbar but keep scrolling functional */
     .nav-tabs::-webkit-scrollbar {
       display: none;
+      height: 0;
     }
     .nav-tabs {
       -ms-overflow-style: none;
@@ -277,6 +281,46 @@
     .nav-tabs .nav-item {
       flex-shrink: 0; /* prevent tab compression */
       min-width: max-content;
+    }
+
+    /* Arrow indicators for mobile */
+    .tabs-scroll-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(52, 142, 56, 0.9);
+      color: white;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.2rem;
+      line-height: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tabs-scroll-arrow.visible {
+      opacity: 1;
+    }
+
+    .tabs-scroll-arrow-left {
+      left: 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .tabs-scroll-arrow-right {
+      right: 0;
+      border-radius: 4px 0 0 4px;
+    }
+
+    @media (max-width: 991.98px) {
+      .tabs-scroll-arrow {
+        display: flex;
+      }
     }
 
     .nav-tabs .nav-link {
@@ -297,15 +341,20 @@
 
     .nav-tabs .nav-link.active {
       background-color: transparent;
-      color: #348E38;
+      color: #348E38 !important;
       border-bottom-color: #348E38;
       border-radius: 0;
+    }
+
+    .nav-tabs .nav-link.active h4 {
+      color: #348E38 !important;
     }
 
     .nav-tabs .nav-link h4 {
       margin: 0;
       font-size: inherit;
       font-weight: inherit;
+      color: inherit;
     }
 
     /* Desktop: centered layout */
@@ -334,6 +383,10 @@
 
     /* Tablet: medium breakpoint */
     @media (max-width: 991.98px) {
+      .services-tabs-wrapper {
+        padding: 0 2.5rem;
+      }
+
       .nav-tabs .nav-link {
         padding: 0.75rem 1rem;
         font-size: 0.85rem;
@@ -342,9 +395,13 @@
 
     /* Small mobile optimization */
     @media (max-width: 576px) {
+      .services-tabs-wrapper {
+        padding: 0 2.5rem;
+      }
+
       .nav-tabs .nav-link {
         padding: 0.65rem 0.85rem;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
       }
     }
   </style>
@@ -404,7 +461,10 @@
       <div class="container">
 
         <div class="services-tabs-wrapper">
-          <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100" role="tablist">
+          <button class="tabs-scroll-arrow tabs-scroll-arrow-left" id="tabsScrollLeft" aria-label="Scroll tabs left">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <ul class="nav nav-tabs" id="servicesTabs" data-aos="fade-up" data-aos-delay="100" role="tablist">
             <li class="nav-item">
               <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#services-tab-1">
                 <h4>Graphic Design</h4>
@@ -466,6 +526,9 @@
             </li>
 
           </ul>
+          <button class="tabs-scroll-arrow tabs-scroll-arrow-right" id="tabsScrollRight" aria-label="Scroll tabs right">
+            <i class="bi bi-chevron-right"></i>
+          </button>
         </div><!-- End services tabs -->
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
@@ -1245,6 +1308,8 @@
       // Mobile-optimized scrollable tabs: auto-scroll active tab into view
       const navTabs = document.querySelector('.nav-tabs');
       const activeTab = document.querySelector('.nav-tabs .nav-link.active');
+      const scrollLeftBtn = document.getElementById('tabsScrollLeft');
+      const scrollRightBtn = document.getElementById('tabsScrollRight');
       
       if (navTabs && activeTab && window.innerWidth < 992) {
         // Scroll active tab into center view on mobile
@@ -1252,6 +1317,41 @@
         const tabWidth = activeTab.offsetWidth;
         const containerWidth = navTabs.offsetWidth;
         navTabs.scrollLeft = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+      }
+
+      // Tab scroll arrow functionality
+      function updateScrollArrows() {
+        if (window.innerWidth < 992 && navTabs) {
+          const hasScrollLeft = navTabs.scrollLeft > 0;
+          const hasScrollRight = navTabs.scrollLeft < (navTabs.scrollWidth - navTabs.offsetWidth - 10);
+          
+          if (scrollLeftBtn) {
+            scrollLeftBtn.classList.toggle('visible', hasScrollLeft);
+          }
+          if (scrollRightBtn) {
+            scrollRightBtn.classList.toggle('visible', hasScrollRight);
+          }
+        }
+      }
+
+      if (scrollLeftBtn) {
+        scrollLeftBtn.addEventListener('click', () => {
+          navTabs.scrollLeft -= 150;
+          setTimeout(updateScrollArrows, 150);
+        });
+      }
+
+      if (scrollRightBtn) {
+        scrollRightBtn.addEventListener('click', () => {
+          navTabs.scrollLeft += 150;
+          setTimeout(updateScrollArrows, 150);
+        });
+      }
+
+      if (navTabs) {
+        navTabs.addEventListener('scroll', updateScrollArrows);
+        window.addEventListener('resize', updateScrollArrows);
+        updateScrollArrows(); // Initial check
       }
 
       // Re-center active tab when clicking on new tab (mobile)
@@ -1263,6 +1363,7 @@
               const tabWidth = this.offsetWidth;
               const containerWidth = navTabs.offsetWidth;
               navTabs.scrollLeft = tabOffsetLeft - (containerWidth / 2) + (tabWidth / 2);
+              updateScrollArrows();
             }, 100);
           }
         });
