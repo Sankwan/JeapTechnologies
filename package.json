@@ -1,0 +1,27 @@
+{
+  "name": "jeaptechnologies",
+  "version": "1.0.0",
+  "description": "Jeap Technologies - Professional digital services website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sankwan/JeapTechnologies.git"
+  },
+  "keywords": [
+    "digital-solutions",
+    "web-development",
+    "graphic-design"
+  ],
+  "author": "Jeap Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sankwan/JeapTechnologies/issues"
+  },
+  "homepage": "https://github.com/Sankwan/JeapTechnologies#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
